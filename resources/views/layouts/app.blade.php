@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    @stack('styles')
+    @yield('styles')
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                     </li>
 
                     <li class="sidebar-item {{ request()->is('backend/customers*') ? 'active' : '' }}">
-                        <a class="sidebar-link" href="#">
+                        <a class="sidebar-link" href="{{ route('backend.customers.index') }}">
                             <i class="align-middle fas fa-users"></i>
                             <span class="align-middle">客戶管理</span>
                         </a>
@@ -132,7 +132,10 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
-    @stack('scripts')
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    @yield('scripts')
 
 </body>
 
