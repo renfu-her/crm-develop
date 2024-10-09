@@ -16,8 +16,7 @@
                     <th>ID</th>
                     <th>姓名</th>
                     <th>Email</th>
-                    <th>電話</th>
-                    <th>地址</th>
+                    <th>電話以及地址</th>
                     <th style="width: 25%;">操作</th>
                 </tr>
             </thead>
@@ -27,8 +26,7 @@
                         <td>{{ $customer->id }}</td>
                         <td>{{ $customer->name }}</td>
                         <td>{{ $customer->email }}</td>
-                        <td>{{ $customer->phone }}</td>
-                        <td>{{ $customer->address }}</td>
+                        <td>{{ $customer->phone }} <br> {{ $customer->address }}</td>
                         <td>
                             <a href="{{ route('backend.customers.edit', $customer->id) }}" class="btn btn-warning m-1">
                                 <i class="fas fa-edit"></i>
