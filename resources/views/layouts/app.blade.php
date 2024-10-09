@@ -19,6 +19,8 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     @stack('styles')
 </head>
 
@@ -27,111 +29,67 @@
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" href="index.html">
-                    <span class="align-middle">AdminKit</span>
+                    <span class="align-middle">CRM 客戶關係管理</span>
                 </a>
 
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
-                        Pages
+                        管理系統
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="index.html">
-                            <i class="align-middle" data-feather="sliders"></i> <span
-                                class="align-middle">Dashboard</span>
+                    <li class="sidebar-item {{ request()->is('backend/customers*') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="#">
+                            <i class="align-middle fas fa-users"></i>
+                            <span class="align-middle">客戶管理</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-profile.html">
-                            <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-sign-in.html">
-                            <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-sign-up.html">
-                            <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign
-                                Up</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
+                    <li class="sidebar-item {{ request()->is('backend/marketing*') ? 'active' : '' }}">
                         <a class="sidebar-link" href="pages-blank.html">
-                            <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
+                            <i class="align-middle fas fa-bullhorn"></i>
+                            <span class="align-middle">營銷活動管理</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item {{ request()->is('backend/contacts*') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="pages-profile.html">
+                            <i class="align-middle fas fa-address-book"></i>
+                            <span class="align-middle">聯繫管理</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item {{ request()->is('backend/sales*') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="pages-sign-in.html">
+                            <i class="align-middle fas fa-shopping-cart"></i>
+                            <span class="align-middle">銷售管理</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item {{ request()->is('backend/schedules*') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="pages-sign-up.html">
+                            <i class="align-middle fas fa-calendar-alt"></i>
+                            <span class="align-middle">日程與任務管理</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item {{ request()->is('backend/tickets*') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="pages-blank.html">
+                            <i class="align-middle fas fa-ticket-alt"></i>
+                            <span class="align-middle">票務與支持</span>
                         </a>
                     </li>
 
                     <li class="sidebar-header">
-                        Tools & Components
+                        報告分析
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="ui-buttons.html">
-                            <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item active">
-                        <a class="sidebar-link" href="ui-forms.html">
-                            <i class="align-middle" data-feather="check-square"></i> <span
-                                class="align-middle">Forms</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="ui-cards.html">
-                            <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="ui-typography.html">
-                            <i class="align-middle" data-feather="align-left"></i> <span
-                                class="align-middle">Typography</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="icons-feather.html">
-                            <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-header">
-                        Plugins & Addons
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="charts-chartjs.html">
-                            <i class="align-middle" data-feather="bar-chart-2"></i> <span
-                                class="align-middle">Charts</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="maps-google.html">
-                            <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
+                    <li class="sidebar-item {{ request()->is('backend/reports*') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="pages-blank.html">
+                            <i class="align-middle fas fa-chart-line"></i>
+                            <span class="align-middle">業務報告與分析</span>
                         </a>
                     </li>
                 </ul>
-
-                <div class="sidebar-cta">
-                    <div class="sidebar-cta-content">
-                        <strong class="d-inline-block mb-2">Upgrade to Pro</strong>
-                        <div class="mb-3 text-sm">
-                            Are you looking for more components? Check out our premium version.
-                        </div>
-                        <div class="d-grid">
-                            <a href="upgrade-to-pro.html" class="btn btn-primary">Upgrade to Pro</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </nav>
 
@@ -152,18 +110,12 @@
 
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
                                 data-bs-toggle="dropdown">
-                                <span class="text-dark">Charles Hall</span>
+                                <span class="text-dark">{{ Auth::user()->name }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1"
                                         data-feather="user"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1"
-                                        data-feather="pie-chart"></i> Analytics</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="index.html"><i class="align-middle me-1"
-                                        data-feather="settings"></i> Settings & Privacy</a>
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1"
-                                        data-feather="help-circle"></i> Help Center</a>
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}">Log out</a>
                             </div>
